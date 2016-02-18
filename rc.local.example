@@ -1,0 +1,4 @@
+#!/bin/sh -x
+crontab -r
+crontab 2>/dev/null -l | { cat; echo "@daily /usr/bin/hhvm -dhhvm.jit=false /var/www/mediawiki/maintenance/generateSitemap.php -q --fspath /var/www/mediawiki/sitemap --server 'https://domain.tld' --urlpath 'https://domain.tld/sitemap' --identifier 'mediawiki'"; } | crontab -
+exit 0

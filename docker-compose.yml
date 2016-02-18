@@ -1,0 +1,9 @@
+hhvm:
+  build: .
+  volumes:
+    - /var/www/mediawiki/:/var/www/mediawiki
+    - /var/www/php.ini:/etc/hhvm/php.ini:ro
+    - /var/www/server.ini:/etc/hhvm/server.ini:ro
+  ports:
+    - "9000:9000"
+  restart: always

@@ -1,0 +1,6 @@
+Dockerfile
+docker-compose.yml
+mediawiki
+*.example
+LICENSE
+README.md
