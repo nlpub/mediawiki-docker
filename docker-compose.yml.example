@@ -11,7 +11,7 @@ services:
     restart: always
   cron:
     build: .
-    command: /usr/sbin/cron && tail -f /var/log/cron.log
+    command: /usr/sbin/cron -f >>/var/log/cron.log
     volumes:
     - /var/www/mediawiki/:/var/www/mediawiki
     - /var/www/sitemap.crontab:/etc/cron.d/sitemap:ro
