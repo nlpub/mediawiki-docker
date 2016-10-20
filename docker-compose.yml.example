@@ -1,9 +1,19 @@
-hhvm:
-  build: .
-  volumes:
+version: '2'
+services:
+  hhvm:
+    build: .
+    volumes:
     - /var/www/mediawiki/:/var/www/mediawiki
     - /var/www/php.ini:/etc/hhvm/php.ini:ro
     - /var/www/server.ini:/etc/hhvm/server.ini:ro
-  ports:
+    ports:
     - "9000:9000"
-  restart: always
+    restart: always
+  cron:
+    build: .
+    command: /usr/sbin/cron && tail -f /var/log/cron.log
+    volumes:
+    - /var/www/mediawiki/:/var/www/mediawiki
+    - /var/www/sitemap.crontab:/etc/cron.d/sitemap:ro
+    - /var/www/cron.log:/var/log/cron.log
+    restart: always

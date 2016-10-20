@@ -1,0 +1,1 @@
+@daily root /usr/bin/hhvm -dhhvm.jit=false /var/www/mediawiki/maintenance/generateSitemap.php -q --fspath /var/www/mediawiki/sitemap --server 'https://domain.tld' --urlpath 'https://domain.tld/sitemap' --identifier 'mediawiki'

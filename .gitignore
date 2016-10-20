@@ -1,5 +1,6 @@
 docker-compose.yml
 php.ini
 server.ini
-rc.local
+cron.log
+sitemap.crontab
 mediawiki
