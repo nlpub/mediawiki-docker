@@ -2,6 +2,8 @@ version: '2'
 services:
   hhvm:
     build: .
+    links:
+    - mathoid
     volumes:
     - /var/www/mediawiki/:/var/www/mediawiki
     - /var/www/php.ini:/etc/hhvm/php.ini:ro
@@ -16,4 +18,7 @@ services:
     - /var/www/mediawiki/:/var/www/mediawiki
     - /var/www/sitemap.crontab:/etc/cron.d/sitemap:ro
     - /var/www/cron.log:/var/log/cron.log
+    restart: always
+  mathoid:
+    image: nlpub/mathoid
     restart: always
