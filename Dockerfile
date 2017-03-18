@@ -4,7 +4,7 @@ EXPOSE 9000
 
 RUN \
 apt-get update && \
-apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" mediawiki-math-texvc librsvg2-bin curl && \
+apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" mediawiki-math-texvc librsvg2-bin curl python-pygments && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
