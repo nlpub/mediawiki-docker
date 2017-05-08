@@ -1,4 +1,4 @@
-FROM hhvm/hhvm
+FROM hhvm/hhvm::3.18-lts-latest
 
 EXPOSE 9000
 
