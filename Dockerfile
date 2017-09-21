@@ -6,10 +6,14 @@ apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" 
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
+COPY crontab .htaccess robots.txt /var/www/html
+
 RUN \
 for ext in Math Description2 OpenGraphMeta; do \
 curl -fSLo "$ext.tar.gz" "https://github.com/wikimedia/mediawiki-extensions-$ext/archive/$MEDIAWIKI_BRANCH.tar.gz" && \
 tar Cxf "extensions" "$ext.tar.gz" && \
 mv -fv "extensions/mediawiki-extensions-$ext-$MEDIAWIKI_BRANCH" "extensions/$ext" && \
 rm -f "$ext.tar.gz"; done && \
-make -C extensions/Math/math && make -C extensions/Math/texvccheck
+make -C extensions/Math/math && make -C extensions/Math/texvccheck && \
+a2enmod rewrite &&
+crontab <crontab

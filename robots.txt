@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /w/index.php?diff=
+Disallow: /w/index.php?oldid=
+Disallow: /w/index.php?title=Help
+Disallow: /Help
+Disallow: /w/index.php?title=Image
+Disallow: /Image
+Disallow: /w/index.php?title=MediaWiki
+Disallow: /MediaWiki
+Disallow: /w/index.php?title=Special:
+Disallow: /Special:
+Disallow: /w/index.php?title=Template
+Disallow: /Template
+Disallow: /api.php
+Disallow: /w/api.php
+Disallow: /w/skins/
+
+Host: https://nlpub.ru
+Sitemap: https://nlpub.ru/sitemap.xml
