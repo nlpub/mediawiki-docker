@@ -1,6 +1,4 @@
 docker-compose.yml
-php.ini
-server.ini
 cron.log
-sitemap.crontab
-mediawiki
+crontab
+LocalSettings.php
