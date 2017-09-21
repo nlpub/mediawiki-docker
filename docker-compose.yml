@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mediawiki:
+    build: .
+    ports:
+    - '8080:80'
+    volumes:
+    - './LocalSettings.php:/var/www/html/LocalSettings.php:ro'
+    - './html/cache:/var/www/html/cache'
+    - './html/images:/var/www/html/images'
+    - './html/sitemap:/var/www/html/sitemap:ro'
+  cron:
+    build: .
+    command: /usr/sbin/cron -f
+    volumes:
+    - './LocalSettings.php:/var/www/html/LocalSettings.php:ro'
+    - './html/cache:/var/www/html/cache'
+    - './html/images:/var/www/html/images'
+    - './html/sitemap:/var/www/html/sitemap'
