@@ -6,7 +6,7 @@ apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" 
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
-COPY crontab html/.htaccess html/robots.txt html/favicon.ico /var/www/html/
+COPY crontab html/robots.txt html/favicon.ico /var/www/html/
 
 RUN \
 for ext in Math Description2 OpenGraphMeta; do \
