@@ -1,19 +1,25 @@
-User-agent: *
-Disallow: /w/index.php?diff=
-Disallow: /w/index.php?oldid=
-Disallow: /w/index.php?title=Help
-Disallow: /Help
-Disallow: /w/index.php?title=Image
-Disallow: /Image
-Disallow: /w/index.php?title=MediaWiki
-Disallow: /MediaWiki
-Disallow: /w/index.php?title=Special:
-Disallow: /Special:
-Disallow: /w/index.php?title=Template
-Disallow: /Template
-Disallow: /api.php
-Disallow: /w/api.php
-Disallow: /w/skins/
-
 Host: https://nlpub.ru
 Sitemap: https://nlpub.ru/sitemap.xml
+
+User-agent: *
+
+Disallow: /index.php?diff=
+Disallow: /index.php?oldid=
+Disallow: /index.php?title=
+Disallow: /api.php
+Disallow: /skins/
+
+Disallow: /MediaWiki
+Disallow: /NLPub:
+Disallow: /Special:
+Disallow: /%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:
+Disallow: /Template
+Disallow: /%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:
+
+# Участни(к|ца):
+Disallow: /%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:
+Disallow: /%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D1%86%D0%B0:
+
+# Обсуждение_участни(ка|цы):
+Disallow: /%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:
+Disallow: /%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D1%86%D1%8B:
