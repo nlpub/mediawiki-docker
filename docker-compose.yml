@@ -1,14 +1,15 @@
-version: '2'
+version: '2.3'
 services:
   web:
     build: .
     ports:
-    - '8080:80'
+    - '127.0.0.1:8080:80'
     volumes:
     - './LocalSettings.php:/var/www/html/LocalSettings.php:ro'
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap:ro'
+    init: true
     restart: always
   cron:
     build: .
@@ -18,4 +19,5 @@ services:
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap'
+    init: true
     restart: always
