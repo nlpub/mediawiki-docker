@@ -23,7 +23,6 @@ curl -fSLo "$ext.tar.gz" "https://github.com/wikimedia/mediawiki-extensions-$ext
 tar Cxf "extensions" "$ext.tar.gz" && \
 mv -fv "extensions/mediawiki-extensions-$ext-$MEDIAWIKI_BRANCH" "extensions/$ext" && \
 rm -fv "$ext.tar.gz"; done && \
-make -C extensions/Math/math && make -C extensions/Math/texvccheck && \
 a2enmod rewrite && \
 crontab <crontab && \
 rm -fv crontab
