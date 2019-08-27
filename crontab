@@ -1,1 +1,1 @@
-@daily /usr/local/bin/php /var/www/html/maintenance/generateSitemap.php -q --fspath /var/www/html/sitemap --server 'https://nlpub.ru' --urlpath 'https://nlpub.ru/sitemap' --identifier 'nlpub'
+@daily /usr/local/bin/php /var/www/html/maintenance/generateSitemap.php -q --fspath /var/www/html/sitemap --server 'https://nlpub.ru' --urlpath 'sitemap' --identifier 'nlpub' --skip-redirects
