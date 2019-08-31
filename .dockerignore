@@ -1,4 +1,8 @@
+.git
+html/cache
+html/images
 Dockerfile
-docker-compose.yml
 LICENSE
-README.md
+*.md
+*.yml
+*.php
