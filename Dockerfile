@@ -10,8 +10,10 @@ RUN \
 cd /usr/share && \
 curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" nodejs npm && \
-npm install mathoid@0.7.1 && \
-npm cache clean && \
+git clone https://github.com/wikimedia/mathoid/ && \
+cd mathoid && \
+npm install && \
+npm cache clean --force && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
