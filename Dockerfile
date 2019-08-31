@@ -9,7 +9,7 @@ rm -rf /var/lib/apt/lists/*
 RUN \
 cd /usr/share && \
 curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" nodejs && \
+apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" nodejs npm && \
 npm install mathoid@0.7.1 && \
 npm cache clean && \
 apt-get clean && \
