@@ -15,7 +15,7 @@ services:
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap:ro'
     init: true
-    restart: always
+    restart: unless-stopped
   cron:
     build: .
     command: /usr/sbin/cron -f
@@ -25,4 +25,4 @@ services:
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap'
     init: true
-    restart: always
+    restart: unless-stopped
