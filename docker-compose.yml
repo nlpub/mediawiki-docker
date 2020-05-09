@@ -1,12 +1,7 @@
 version: '2.3'
 services:
   web:
-    build:
-      context: .
-      args:
-      - http_proxy
-      - https_proxy
-      - no_proxy
+    build: .
     ports:
     - '127.0.0.1:8080:80'
     volumes:
@@ -14,7 +9,6 @@ services:
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap:ro'
-    init: true
     restart: unless-stopped
   cron:
     build: .
@@ -24,5 +18,4 @@ services:
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap'
-    init: true
     restart: unless-stopped

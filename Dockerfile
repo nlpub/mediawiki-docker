@@ -2,7 +2,7 @@ FROM mediawiki:stable
 
 RUN \
 apt-get update && \
-apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" build-essential dvipng ocaml-nox texlive-fonts-recommended texlive-lang-cyrillic texlive-lang-greek texlive-latex-recommended texlive-latex-extra librsvg2-bin librsvg2-dev python-pygments unzip cron gnupg && \
+apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" tini build-essential dvipng ocaml-nox texlive-fonts-recommended texlive-lang-cyrillic texlive-lang-greek texlive-latex-recommended texlive-latex-extra librsvg2-bin librsvg2-dev python-pygments unzip cron gnupg && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
@@ -28,3 +28,5 @@ rm -fv "$ext.tar.gz"; done && \
 a2enmod rewrite && \
 crontab <crontab && \
 rm -fv crontab
+
+ENTRYPOINT ["/usr/bin/tini", "--"]
