@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-    - '127.0.0.1:8080:80'
+    - '127.0.0.1:8888:80'
     volumes:
     - './LocalSettings.php:/var/www/html/LocalSettings.php:ro'
     - './html/cache:/var/www/html/cache'

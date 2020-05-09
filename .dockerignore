@@ -1,6 +1,7 @@
 .git
 html/cache
 html/images
+html/sitemap
 Dockerfile
 LICENSE
 *.md
