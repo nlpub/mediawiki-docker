@@ -29,4 +29,6 @@ a2enmod rewrite && \
 crontab <crontab && \
 rm -fv crontab
 
-ENTRYPOINT ["/usr/bin/tini", "--"]
+ENTRYPOINT ["/usr/bin/tini", "--", "docker-php-entrypoint"]
+
+CMD apache2-foreground
