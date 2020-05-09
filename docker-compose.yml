@@ -9,6 +9,8 @@ services:
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap:ro'
+    - './html/favicon.ico:/var/www/html/favicon.ico:ro'
+    - './html/robots.txt:/var/www/html/robots.txt:ro'
     restart: unless-stopped
   cron:
     build: .
@@ -18,4 +20,6 @@ services:
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap'
+    - './html/favicon.ico:/var/www/html/favicon.ico:ro'
+    - './html/robots.txt:/var/www/html/robots.txt:ro'
     restart: unless-stopped
