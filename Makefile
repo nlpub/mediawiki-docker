@@ -12,6 +12,7 @@ deploy:
 	podman container create --pod=nlpub --name=nlpub_cron --restart=always -v './LocalSettings.php:/var/www/html/LocalSettings.php:ro' -v './html/favicon.ico:/var/www/html/favicon.ico:ro' -v './html/robots.txt:/var/www/html/robots.txt:ro' -v './html/cache:/var/www/html/cache' -v './html/images:/var/www/html/images' -v './html/sitemap:/var/www/html/sitemap' $(IMAGE) /usr/sbin/cron -f
 
 purge:
+	-systemctl --user stop pod-nlpub
 	-podman stop nlpub_web nlpub_cron
 	-podman rm nlpub_web nlpub_cron
 	-podman pod rm nlpub
