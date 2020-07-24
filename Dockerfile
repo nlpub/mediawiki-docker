@@ -4,7 +4,7 @@ MAINTAINER Dmitry Ustalov <dmitry.ustalov@gmail.com>
 
 RUN \
 apt-get update && \
-apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" tini cron nodejs npm librsvg2-dev && \
+apt-get install --no-install-recommends -y -o Dpkg::Options::="--force-confold" tini cron nodejs npm librsvg2-dev fonts-paratype && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
