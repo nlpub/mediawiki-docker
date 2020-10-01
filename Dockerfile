@@ -9,6 +9,7 @@ apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
 RUN \
+MEDIAWIKI_BRANCH="REL$(echo $MEDIAWIKI_MAJOR_VERSION | tr . _)" && \
 for ext in Math Description2 OpenGraphMeta; do \
 curl -fSLo "$ext.tar.gz" "https://github.com/wikimedia/mediawiki-extensions-$ext/archive/$MEDIAWIKI_BRANCH.tar.gz" && \
 tar Czxf "extensions" "$ext.tar.gz" --transform="s/^mediawiki-extensions-$ext-$MEDIAWIKI_BRANCH/$ext/" && \
