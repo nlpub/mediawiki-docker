@@ -22,6 +22,9 @@ npm install && \
 npm cache clean --force && \
 echo '@daily /usr/local/bin/php /var/www/html/maintenance/generateSitemap.php -q --fspath "/var/www/html/sitemap" --server "https://nlpub.ru" --urlpath "sitemap" --identifier "nlpub" --skip-redirects' | crontab
 
+# block senstive file access
+COPY ./block-files.conf /etc/apache2/conf-enabled
+
 ENTRYPOINT ["/usr/bin/tini", "--", "docker-php-entrypoint"]
 
 CMD apache2-foreground
