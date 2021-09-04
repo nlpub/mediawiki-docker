@@ -1,25 +1,25 @@
-version: '2.3'
+version: '3'
 services:
   web:
-    build: .
+    image: "docker.io/nlpub/mediawiki"
     ports:
     - '127.0.0.1:8888:80'
     volumes:
     - './LocalSettings.php:/var/www/html/LocalSettings.php:ro'
+    - './html/favicon.ico:/var/www/html/favicon.ico:ro'
+    - './html/robots.txt:/var/www/html/robots.txt:ro'
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap:ro'
-    - './html/favicon.ico:/var/www/html/favicon.ico:ro'
-    - './html/robots.txt:/var/www/html/robots.txt:ro'
-    restart: unless-stopped
+    restart: always
   cron:
-    build: .
+    image: "docker.io/nlpub/mediawiki"
     command: /usr/sbin/cron -f
     volumes:
     - './LocalSettings.php:/var/www/html/LocalSettings.php:ro'
+    - './html/favicon.ico:/var/www/html/favicon.ico:ro'
+    - './html/robots.txt:/var/www/html/robots.txt:ro'
     - './html/cache:/var/www/html/cache'
     - './html/images:/var/www/html/images'
     - './html/sitemap:/var/www/html/sitemap'
-    - './html/favicon.ico:/var/www/html/favicon.ico:ro'
-    - './html/robots.txt:/var/www/html/robots.txt:ro'
-    restart: unless-stopped
+    restart: always
